@@ -1,4 +1,4 @@
-//User function template for C++
+//String Palindrome
 class Solution{
 public:	
 	int helper(string S , int s , int e){
@@ -24,3 +24,34 @@ public:
 	}
 
 };
+
+//Reverse an Array
+
+#include <iostream>
+using namespace std;
+
+void reverse(int A[] , int N , int s , int e){
+    if(s>=e){
+        return;
+    }
+    
+    swap(A[s] , A[e]);
+    reverse(A , N , s+1 , e-1);
+}
+
+int main() {
+	//code
+	int N;
+	cin >> N;
+	int A[N];
+	for(int i=0;i<N;i++){
+	    cin>>A[i];
+	}
+	int start = 0 , end = N-1;
+	reverse(A , N , start , end);
+	
+	for(int i=0;i<N;i++){
+	    cout<<A[i]<<" ";
+	}
+	return 0;
+}
